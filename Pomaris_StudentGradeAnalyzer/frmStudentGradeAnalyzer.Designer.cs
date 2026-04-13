@@ -36,7 +36,7 @@
             this.lbStudentNm = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxStName = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxStNo = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.tblpnInputBody = new System.Windows.Forms.TableLayoutPanel();
@@ -121,7 +121,7 @@
             this.tblpnCredentials.ColumnCount = 2;
             this.tblpnCredentials.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.7732F));
             this.tblpnCredentials.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.22681F));
-            this.tblpnCredentials.Controls.Add(this.textBox1, 1, 1);
+            this.tblpnCredentials.Controls.Add(this.tbxStNo, 1, 1);
             this.tblpnCredentials.Controls.Add(this.lbStudentNm, 0, 0);
             this.tblpnCredentials.Controls.Add(this.label1, 0, 1);
             this.tblpnCredentials.Controls.Add(this.tbxStName, 1, 0);
@@ -170,14 +170,14 @@
             this.tbxStName.Size = new System.Drawing.Size(570, 22);
             this.tbxStName.TabIndex = 2;
             // 
-            // textBox1
+            // tbxStNo
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(203, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(570, 22);
-            this.textBox1.TabIndex = 3;
+            this.tbxStNo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxStNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxStNo.Location = new System.Drawing.Point(203, 33);
+            this.tbxStNo.Name = "tbxStNo";
+            this.tbxStNo.Size = new System.Drawing.Size(570, 22);
+            this.tbxStNo.TabIndex = 3;
             // 
             // btnClear
             // 
@@ -421,7 +421,7 @@
         private System.Windows.Forms.Label lbStudentNm;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxStName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxStNo;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.TableLayoutPanel tblpnInputBody;
