@@ -33,18 +33,16 @@
             this.lbStudentGradeAnlyzer = new System.Windows.Forms.Label();
             this.pnBody = new System.Windows.Forms.Panel();
             this.tblpnCredentials = new System.Windows.Forms.TableLayoutPanel();
+            this.tbxStNo = new System.Windows.Forms.TextBox();
             this.lbStudentNm = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxStName = new System.Windows.Forms.TextBox();
-            this.tbxStNo = new System.Windows.Forms.TextBox();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnCalculate = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.tblpnInputBody = new System.Windows.Forms.TableLayoutPanel();
-            this.lbPassFail = new System.Windows.Forms.Label();
-            this.lbResDesc = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbResWName = new System.Windows.Forms.Label();
-            this.lbStNoRes = new System.Windows.Forms.Label();
+            this.lbResDesc = new System.Windows.Forms.Label();
+            this.lbPassFail = new System.Windows.Forms.Label();
             this.tblpnGradeParam = new System.Windows.Forms.TableLayoutPanel();
             this.lbPrelims = new System.Windows.Forms.Label();
             this.lbMidterms = new System.Windows.Forms.Label();
@@ -52,6 +50,7 @@
             this.tbxPrelims = new System.Windows.Forms.TextBox();
             this.tbxMidterms = new System.Windows.Forms.TextBox();
             this.tbxFinals = new System.Windows.Forms.TextBox();
+            this.lsbStParam = new System.Windows.Forms.ListBox();
             this.tblpnDesBar.SuspendLayout();
             this.pnBlkBar.SuspendLayout();
             this.pnBody.SuspendLayout();
@@ -133,6 +132,15 @@
             this.tblpnCredentials.Size = new System.Drawing.Size(776, 60);
             this.tblpnCredentials.TabIndex = 0;
             // 
+            // tbxStNo
+            // 
+            this.tbxStNo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxStNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxStNo.Location = new System.Drawing.Point(203, 33);
+            this.tbxStNo.Name = "tbxStNo";
+            this.tbxStNo.Size = new System.Drawing.Size(570, 22);
+            this.tbxStNo.TabIndex = 3;
+            // 
             // lbStudentNm
             // 
             this.lbStudentNm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -170,28 +178,6 @@
             this.tbxStName.Size = new System.Drawing.Size(570, 22);
             this.tbxStName.TabIndex = 2;
             // 
-            // tbxStNo
-            // 
-            this.tbxStNo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxStNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxStNo.Location = new System.Drawing.Point(203, 33);
-            this.tbxStNo.Name = "tbxStNo";
-            this.tbxStNo.Size = new System.Drawing.Size(570, 22);
-            this.tbxStNo.TabIndex = 3;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnClear.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(36, 321);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(98, 37);
-            this.btnClear.TabIndex = 1;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // btnCalculate
             // 
             this.btnCalculate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -206,6 +192,19 @@
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = false;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnClear.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(36, 321);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(98, 37);
+            this.btnClear.TabIndex = 1;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // tblpnInputBody
             // 
@@ -223,6 +222,37 @@
             this.tblpnInputBody.Size = new System.Drawing.Size(773, 218);
             this.tblpnInputBody.TabIndex = 3;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.lbResDesc, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lbPassFail, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lsbStParam, 0, 3);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(434, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.2233F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.7767F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(336, 212);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // lbResDesc
+            // 
+            this.lbResDesc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbResDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbResDesc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbResDesc.Location = new System.Drawing.Point(3, 82);
+            this.lbResDesc.Name = "lbResDesc";
+            this.lbResDesc.Size = new System.Drawing.Size(330, 56);
+            this.lbResDesc.TabIndex = 1;
+            this.lbResDesc.Text = "Your average grade is: 00.00";
+            this.lbResDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbResDesc.Visible = false;
+            // 
             // lbPassFail
             // 
             this.lbPassFail.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -230,77 +260,18 @@
             this.lbPassFail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbPassFail.Location = new System.Drawing.Point(3, 0);
             this.lbPassFail.Name = "lbPassFail";
-            this.lbPassFail.Size = new System.Drawing.Size(330, 61);
+            this.lbPassFail.Size = new System.Drawing.Size(330, 82);
             this.lbPassFail.TabIndex = 0;
             this.lbPassFail.Text = "Result";
             this.lbPassFail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbPassFail.Visible = false;
-            // 
-            // lbResDesc
-            // 
-            this.lbResDesc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbResDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbResDesc.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbResDesc.Location = new System.Drawing.Point(3, 61);
-            this.lbResDesc.Name = "lbResDesc";
-            this.lbResDesc.Size = new System.Drawing.Size(330, 42);
-            this.lbResDesc.TabIndex = 1;
-            this.lbResDesc.Text = "Your average grade is: 00.00";
-            this.lbResDesc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbResDesc.Visible = false;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.lbResDesc, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.lbPassFail, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lbResWName, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.lbStNoRes, 0, 4);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(434, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.2233F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.7767F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(336, 212);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // lbResWName
-            // 
-            this.lbResWName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbResWName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbResWName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbResWName.Location = new System.Drawing.Point(3, 147);
-            this.lbResWName.Name = "lbResWName";
-            this.lbResWName.Size = new System.Drawing.Size(330, 31);
-            this.lbResWName.TabIndex = 2;
-            this.lbResWName.Text = "John doe idkname average 100.00";
-            this.lbResWName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbResWName.Visible = false;
-            // 
-            // lbStNoRes
-            // 
-            this.lbStNoRes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbStNoRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStNoRes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbStNoRes.Location = new System.Drawing.Point(3, 178);
-            this.lbStNoRes.Name = "lbStNoRes";
-            this.lbStNoRes.Size = new System.Drawing.Size(330, 34);
-            this.lbStNoRes.TabIndex = 3;
-            this.lbStNoRes.Text = "Student Number 02000402145";
-            this.lbStNoRes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbStNoRes.Visible = false;
             // 
             // tblpnGradeParam
             // 
             this.tblpnGradeParam.ColumnCount = 3;
             this.tblpnGradeParam.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.62005F));
             this.tblpnGradeParam.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.37994F));
-            this.tblpnGradeParam.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tblpnGradeParam.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tblpnGradeParam.Controls.Add(this.lbPrelims, 0, 1);
             this.tblpnGradeParam.Controls.Add(this.lbMidterms, 0, 2);
             this.tblpnGradeParam.Controls.Add(this.lbFinals, 0, 3);
@@ -385,6 +356,25 @@
             this.tbxFinals.Size = new System.Drawing.Size(238, 22);
             this.tbxFinals.TabIndex = 5;
             // 
+            // lsbStParam
+            // 
+            this.lsbStParam.BackColor = System.Drawing.Color.DimGray;
+            this.lsbStParam.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lsbStParam.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsbStParam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsbStParam.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lsbStParam.FormattingEnabled = true;
+            this.lsbStParam.ItemHeight = 20;
+            this.lsbStParam.Items.AddRange(new object[] {
+            "Test",
+            "test2"});
+            this.lsbStParam.Location = new System.Drawing.Point(3, 166);
+            this.lsbStParam.Name = "lsbStParam";
+            this.lsbStParam.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.lsbStParam.Size = new System.Drawing.Size(330, 43);
+            this.lsbStParam.TabIndex = 2;
+            this.lsbStParam.Visible = false;
+            // 
             // frmStudentGradeAnalyzer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,8 +418,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lbResDesc;
         private System.Windows.Forms.Label lbPassFail;
-        private System.Windows.Forms.Label lbResWName;
-        private System.Windows.Forms.Label lbStNoRes;
         private System.Windows.Forms.TableLayoutPanel tblpnGradeParam;
         private System.Windows.Forms.Label lbPrelims;
         private System.Windows.Forms.Label lbMidterms;
@@ -437,6 +425,7 @@
         private System.Windows.Forms.TextBox tbxPrelims;
         private System.Windows.Forms.TextBox tbxMidterms;
         private System.Windows.Forms.TextBox tbxFinals;
+        private System.Windows.Forms.ListBox lsbStParam;
     }
 }
 

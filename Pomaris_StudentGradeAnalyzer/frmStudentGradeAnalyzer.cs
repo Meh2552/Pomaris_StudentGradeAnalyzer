@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,27 +7,34 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Pomaris_StudentGradeAnalyzer
 {
     public partial class frmStudentGradeAnalyzer : Form
     {
+
+        ArrayList grades = new ArrayList();
+
         // Structure
-        public string stName = "", stNo = "";
-        public class Student
+        public struct Student
         {
-            this.stName = "";
-            this.stNo = "";
+            public Student(string stName, string stNo)
+            {
+                this.stName = stName;
+                this.stNo = stNo;
+            }
+
+            public string stName { get; }
+            public string stNo { get; }
         }
-        
+
         public frmStudentGradeAnalyzer()
         {
             InitializeComponent();
         }
 
-        ArrayList grades = new ArrayList();
         private void btnCalculate_Click(object sender, EventArgs e)
         {
 
@@ -38,15 +46,17 @@ namespace Pomaris_StudentGradeAnalyzer
             }
 
             grades.Clear();
+            
 
+            string name = "", num = "";
             // Checks if inputted grades are numbers
             try
             {
                 if (!tbxPrelims.Text.Equals("")) grades.Add(Convert.ToDouble(tbxPrelims.Text));
                 if (!tbxMidterms.Text.Equals("")) grades.Add(Convert.ToDouble(tbxMidterms.Text));
                 if (!tbxFinals.Text.Equals("")) grades.Add(Convert.ToDouble(tbxFinals.Text));
-                stName = tbxStName.Text;
-                stNo = tbxStNo.Text;
+                name = tbxStName.Text;
+                num = tbxStNo.Text;
             }
 
             catch (FormatException)
@@ -55,8 +65,10 @@ namespace Pomaris_StudentGradeAnalyzer
                 return;
             }
 
+            Student st = new Student(name, num);
+
             //checks if inputted grades are 0-100
-             foreach (double grade in grades)
+            foreach (double grade in grades)
             {
                 if (grade < 0 || grade > 100)
                 {
@@ -72,14 +84,14 @@ namespace Pomaris_StudentGradeAnalyzer
             {
                 string avrStr = avrGr((double)grades[0], (double)grades[1], (double)grades[2]);
                 passed = pass(Convert.ToDouble(avrStr));
-                disRes(avrStr, stName, stNo, passed);
+                disRes(avrStr, st.stName, st.stNo, passed);
             }
 
             else if (grades.Count == 2)
             {
                 string avrStr = avrGr((double)grades[0], (double)grades[1]);
                 passed = pass(Convert.ToDouble(avrStr));
-                disRes(avrStr, stName, stNo, passed);
+                disRes(avrStr, st.stName, st.stNo, passed);
             }
 
             else 
@@ -115,13 +127,13 @@ namespace Pomaris_StudentGradeAnalyzer
         {
             lbPassFail.Visible = true;
             lbResDesc.Visible = true;
-            lbResWName.Visible = true;
-            lbStNoRes.Visible = true;
+            lsbStParam.Visible = true;
 
             lbPassFail.Text = (pass) ? "You Passed" : "You Failed";
             lbResDesc.Text = "Your average grade is: " + average;
-            lbResWName.Text = "Student: " + stName;
-            lbStNoRes.Text = "Student No: " + stNo;
+            lsbStParam.Items.Clear();
+            lsbStParam.Items.Add("Student: " + stName);
+            lsbStParam.Items.Add("Student No: " + stNo);
         }
 
         // Void Method (Display) for Invalid Input
@@ -129,8 +141,7 @@ namespace Pomaris_StudentGradeAnalyzer
         {
             lbPassFail.Visible = true;
             lbResDesc.Visible = true;
-            lbResWName.Visible = false;
-            lbStNoRes.Visible = false;
+            lsbStParam.Visible = false;
 
             lbPassFail.Text = "Invalid Input";
             lbResDesc.Text = desc;
@@ -147,8 +158,7 @@ namespace Pomaris_StudentGradeAnalyzer
 
             lbPassFail.Visible = false;
             lbResDesc.Visible = false;
-            lbResWName.Visible = false;
-            lbStNoRes.Visible = false;
+            lsbStParam.Visible = false;
 
             tbxStNo.Select();
         }
