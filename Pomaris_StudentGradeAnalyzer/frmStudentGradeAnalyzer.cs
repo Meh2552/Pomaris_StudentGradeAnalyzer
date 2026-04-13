@@ -13,6 +13,14 @@ namespace Pomaris_StudentGradeAnalyzer
 {
     public partial class frmStudentGradeAnalyzer : Form
     {
+        // Structure
+        public string stName = "", stNo = "";
+        public class Student
+        {
+            this.stName = "";
+            this.stNo = "";
+        }
+        
         public frmStudentGradeAnalyzer()
         {
             InitializeComponent();
@@ -29,7 +37,6 @@ namespace Pomaris_StudentGradeAnalyzer
                 return;
             }
 
-            string stName = "", stNo = "";
             grades.Clear();
 
             // Checks if inputted grades are numbers
