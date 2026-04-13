@@ -58,6 +58,7 @@ namespace Pomaris_StudentGradeAnalyzer
                 }
             }
 
+            // Checks if there are 2 or 3 grades inputted, then calculates the average and displays the result
             double avr = 0;
             Boolean passed = false;
             if (grades.Count == 3)
@@ -81,24 +82,28 @@ namespace Pomaris_StudentGradeAnalyzer
             }
         }
 
+        // Average (3 grades)
         private string avrGr(double prelims, double midterms, double finals)
         {
             double avr = (prelims + midterms + finals) / 3;
             return avr.ToString("0.00");
         }
 
+        // Overloaded (2 grades)
         private string avrGr(double grade1, double grade2)
         {
             double avr = (grade1 + grade2) / 2;
             return avr.ToString("0.00");
         }
 
+        // Static Method (Pass or Fail)
         private static Boolean pass(double average)
         {
             Boolean pass = false;
             return pass = (average >= 75) ? true : false;
         }
 
+        // Void Method (Display)
         private void disRes(string average, string stName, string stNo, Boolean pass)
         {
             lbPassFail.Visible = true;
@@ -112,6 +117,7 @@ namespace Pomaris_StudentGradeAnalyzer
             lbStNoRes.Text = "Student No: " + stNo;
         }
 
+        // Void Method (Display) for Invalid Input
         private void disRes(string desc)
         {
             lbPassFail.Visible = true;
@@ -123,6 +129,7 @@ namespace Pomaris_StudentGradeAnalyzer
             lbResDesc.Text = desc;
         }
 
+        // Clear Button
         private void btnClear_Click(object sender, EventArgs e)
         {
             tbxPrelims.Clear();
